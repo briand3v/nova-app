@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.9.4",
+    "parcel-bundler": "^1.10.3",
+    "postscribe": "^2.0.8",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-router-dom": "^4.3.1",
+    "react-script-tag": "^1.1.2",
+    "react-scripts": "2.0.5",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

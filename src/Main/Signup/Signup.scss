@@ -1,0 +1,118 @@
+.bg-signup{
+	background-image: url(/assets/img/bg-signup.png);
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: 100% 140%;
+
+}
+
+.auth-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 1px solid #8080801c;
+  width: 100%;
+  padding: 40px;
+  transform: scale(0) rotateY(110deg);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  position: absolute;
+}
+.auth-card .d-flex > input {
+    font-size: 13px;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.card-anim-1{
+	transform: scale(1) rotateY(0deg);
+	opacity: 1;
+}
+// .card-anim-hidden-1{
+// 	transform: scale(0) rotateY(110deg);
+// 	opacity: 0;
+// }
+
+.bg-opacity-0{
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	background-color: #000000b8;
+	position: absolute;
+}
+
+// buttons styles
+
+.btn-minimalist{
+	text-decoration: none;
+	color: #ffffffb5;
+	font-size: 16px;
+	transition: .4s all ease-in-out;
+	-webkit-transition: .4s all ease-in-out;
+	-moz-transition: .4s all ease-in-out;
+	-o-transition: .4s all ease-in-out;
+}
+.btn-minimalist:hover{
+   color: #fff;
+   transform: scale(1.1);
+}
+
+.btn-minimalist-invers{
+	text-decoration: none;
+	color: #827e7e;
+	font-size: 16px;
+	transition: .4s all ease-in-out;
+}
+.btn-minimalist-invers:hover{
+	color: black;
+	transform: scale(1.1);
+}
+.btn-submit{
+	text-align: center;
+	padding: 10px;
+	color: white;
+	border-radius: 25px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: -webkit-linear-gradient(1.838617rad, #00e06e 0%, rgb(0, 123, 255) 96%);
+	background-image: linear-gradient(1.838617rad, #00e06e 0%, rgb(0, 123, 255) 96%);
+	transition: .4s background-image ease-in-out;
+	-webkit-transition: .4s background-image ease-in-out;
+	-moz-transition: .4s background-image ease-in-out;
+	-o-transition: .4s background-image ease-in-out;
+	z-index: 100;
+	&:before {
+		border-radius: inherit;
+		background-image: -webkit-linear-gradient(1.838617rad, rgb(0, 123, 255)  0%,  #00e06e 96%);
+	    background-image: linear-gradient(1.838617rad, rgb(0, 123, 255)  0%,  #00e06e 96%);
+		content: '';    
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0; left: 0;
+		opacity: 0;
+		width: 100%;
+		z-index: -100;
+		transition: opacity 0.45s;
+	}
+
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+	}
+
+
+}
+
+  
+ 
+
+
