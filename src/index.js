@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'milligram/dist/milligram.min.css';
 import './index.css';
+import './nova-advance.scss';
+import './variables.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

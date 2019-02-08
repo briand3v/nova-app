@@ -1,0 +1,186 @@
+@import './variables.scss';
+
+
+// cards
+.small-icon{
+  width: 60px;
+  height: auto;
+  transform: scale(1);
+  transition: all .5 ease-in-out;
+  -webkit-transition: all .5 ease;
+
+  &:hover{
+		transform: scale(1.1);
+		transition: all .5 ease-in-out;
+		-webkit-transition: all 200ms ease-in;
+		cursor: pointer;
+	}
+}
+
+.notes-app{
+  margin: 0;
+  width: auto;
+  height: 100%;
+  background-image: linear-gradient(-0.161383rad, rgba(28, 25, 31, 0.65) 0%, rgba(88, 88, 87, 0.65) 96%);
+}
+
+.notes-card{
+  background-image: url('/images/one-way.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 100%;
+  width: 100%;
+  height: 50%;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: $overlay;
+}
+.supernova-card{
+  width: 100%;
+  height: 20%;
+  padding: 15px;
+  background-color: $transparentgrey;
+  border-radius: 6px;
+  color: $softwhite;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.superblock-cards {
+  overflow-y: auto;
+  padding: 15px 0!important;
+  .supernova-card:nth-child(n+1){
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+.card-container{
+  padding: 0;
+  height: 100%;
+  .row{
+    height: 100%;
+  }
+}
+.notespanel{
+  // background-color: #30323c;
+  height: 50%;
+  &_one{
+    // background-color: #fff;
+    width: 100%;
+    height: 50%;
+  }
+  &_two{
+    // background-color: #30323c;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 13px;
+  }
+}
+// fonts 
+.text-white{
+  color: $white;
+}
+.fs-20{
+  font-size: 30px;
+}
+// buttons
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+[class*='btn-']{
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  border: .5px solid #fff;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transform: scale(1);
+  transition: .5s all ease-out;
+  font-size: calc(1em - 4px);
+  text-transform: uppercase;
+  &:hover{
+    transform: scale(1.1);
+    transition: .5s all ease-out;
+    cursor: pointer;
+  }
+}
+
+.btn-default{
+  z-index: 2;
+}
+.btn-success{
+  z-index: 2;
+}
+.btn-copy{
+  z-index: 3;
+  border-color: #a2b5d8ab;
+ &:hover{
+    background-color: #a2b5d8ab;
+    color: #fff;
+  }
+}
+.btn-danger{
+  border-color: red;
+  z-index: 4;
+  &:hover{
+    background-color: red;
+    color: #fff;
+  }
+}
+// inputs
+
+textarea{
+  min-width: 55%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 55%;
+  margin: 0px;
+  height: 171px;
+  width: 350px;
+  border-color: transparent;
+  color: $softwhite;
+  padding: 10px!important;
+  letter-spacing: 1.2px;
+  font-size: 11px;
+  &:hover{
+    border-color: $softgrey;
+  }
+  .focustextarea{
+    border-color: $softgrey;
+  }
+}
+
+.inputtext{
+  margin: 0;
+  width: 34%;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 3px;
+  height: 85%;
+  color: $softwhite;
+  font-size: 14px;
+  &:hover{
+    box-shadow: 0px 1px 0px 0px #8080808f;
+  }
+  
+  .focusinput{
+    box-shadow: 0px 1px 0px 0px #8080808f;
+  }
+}
+
+
+

@@ -1,0 +1,8 @@
+@import '../../variables.scss';
+.movements-card{
+    background: linear-gradient(217deg, rgba(58, 58, 58, 0.8), rgba(78, 74, 74, 0) 70.71%), 
+    linear-gradient(127deg, rgba(14, 14, 19, 0.8), rgba(0,255,0,0) 70.71%), 
+    linear-gradient(336deg, rgba(15, 15, 16, 0.8), rgba(0,0,255,0) 70.71%);
+    color: $white;
+    padding: 30px;
+}

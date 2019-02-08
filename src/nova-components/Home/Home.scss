@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.bg-user{
+	background-image: url('https://i.lensdump.com/i/gHBai.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 -180px;
+	font-size: $fs-big;
+	color: $white;
+	height: 230px;
+}
+.col-movements-head{
+	background: 
+	linear-gradient(217deg, #0f0f10cf, rgba(78, 74, 74, 0) 70.71%), 
+    linear-gradient(127deg, #232323, rgba(0, 255, 0, 0) 70.71%), 
+    linear-gradient(336deg, #484848, rgba(0, 0, 255, 0) 70.71%);
+
+}
