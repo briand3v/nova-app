@@ -1,8 +1,9 @@
 import "./notesApp.scss";
 import React from "react";
-import CardNote from './CardNote/CardNote';
+import CardNote from './Card/cardnote';
+import ImagesPopup from '../Popups/ImagesPopup/ImagesPopup'
 
-function template(create) {
+function template(state,create,iPopup,closeEvent) {
 	
   return (
     <div className="notes-app">
@@ -16,7 +17,8 @@ function template(create) {
 					</div>
 					<div className="notespanel">
 						<div className="notespanel_one">
-							<span className="mbrih mbri-plus mt-10 f-right"></span>
+							<span className="mbrih mbri-plus mt-10 f-right"
+							></span>
 						</div>
 						<div className="notespanel_two">
 							<div className="d-flex content-row buttons">
@@ -28,14 +30,15 @@ function template(create) {
 					</div>
 				</div>
 				<div className="column column-67 superblock-cards">
-					<CardNote data={{img:'/images/code.png',num:1}} />
-					<CardNote data={{img:'/images/wallp.png',num:2}}/>
-					<CardNote data={{num:3}} />
-					<CardNote data={{img:'/images/code.png',num:4}} />
-					<CardNote data={{num:5}}/>
-					<CardNote data={{num:6}}/>
-					<CardNote data={{num:7}}/>
+					<CardNote data={{img:'/images/code.png',num:1}} openPopup={iPopup} />
+					<CardNote data={{img:'/images/wallp.png',num:2}} openPopup={iPopup}/>
+					<CardNote data={{num:3}} openPopup={iPopup}/>
+					<CardNote data={{img:'/images/code.png',num:4}} openPopup={iPopup}/>
+					<CardNote data={{num:5}} openPopup={iPopup}/>
+					<CardNote data={{num:6}} openPopup={iPopup}/>
+					<CardNote data={{num:7}} openPopup={iPopup}/>
 				</div>
+				<ImagesPopup visible={false} objectId={'123sdalmk2331sde231d'} visible={state.impagesPopup} closeEvent={closeEvent}/>
 			</div>
 		</div>
     </div>

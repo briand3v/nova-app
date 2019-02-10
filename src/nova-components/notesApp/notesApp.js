@@ -5,9 +5,34 @@ import {createCard} from '../../controllers/cards'
 class notesApp extends React.Component {
 
 	constructor(){
-		super()
+		super();
+		this.state = {
+			props: 'none',
+			data: null,
+			impagesPopup: false
+		}
 	}
 	
+	componentDidMount() {
+		
+	}
+
+	trim(string,length){
+		const trimmedString = string.length > length ? string.substring(0, length) + '...' 
+				: string
+		return trimmedString
+	}
+	
+	openImagesPopup(e){
+		this.setState((state,props)=>({
+			impagesPopup: !state.impagesPopup
+		}),()=>{
+		})
+	}
+
+	closePopup(){
+		this.setState({impagesPopup: false})
+	}
 
 	createcard(){
 		const defaultdata = {
@@ -15,9 +40,6 @@ class notesApp extends React.Component {
 			title: document.getElementById('titlecard').value,
 			desc: document.getElementById('desccard').value
 		}
-
-		console.log(defaultdata)
-
 		// const card = createCard(defaultdata)
 		// card.then((res)=>{
 		// 	console.log(res)
@@ -27,7 +49,7 @@ class notesApp extends React.Component {
 	}
 
 	render() {
-		return template.call(this,this.createcard.bind(this));
+		return template.call(this,this.state,this.createcard.bind(this),this.openImagesPopup.bind(this),this.closePopup.bind(this));
 	}
 }
 

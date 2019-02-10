@@ -84,6 +84,33 @@
     padding-bottom: 13px;
   }
 }
+
+.popup-images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-content{
+  width: 50%;
+  height: 50%;
+  position: relative;
+  background-color: #ffffffbd;
+}
+
+
+//popup
+
+.popup-images{
+  width: 100%;
+  height: 100%;
+  background-color: #0009;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
 // fonts 
 .text-white{
   color: $white;
