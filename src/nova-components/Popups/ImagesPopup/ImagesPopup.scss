@@ -1,0 +1,26 @@
+.ocult{
+	display: none;
+}
+
+.visible{
+	display: block;
+}
+.images{
+	padding: 20px;
+	background: #3431;
+	height: 80%;
+	position: relative;
+	overflow-x: scroll; 
+	display: flex;
+	align-items: center;
+	img:nth-child(n+1){
+		position: absolute;
+		width: 250px;
+		height: 150px;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
