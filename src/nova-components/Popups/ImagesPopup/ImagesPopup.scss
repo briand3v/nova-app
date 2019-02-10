@@ -1,5 +1,5 @@
 .ocult{
-	display: none;
+	display: none!important;
 }
 
 .visible{
@@ -8,15 +8,47 @@
 .images{
 	padding: 20px;
 	background: #3431;
-	height: 80%;
 	position: relative;
 	overflow-x: scroll; 
 	display: flex;
 	align-items: center;
+	height: 100%;
+    width: 100%;
+    -webkit-perspective: 600px;
 	img:nth-child(n+1){
+		display: position;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    
+	    width: 200px;
+	    height: 100px;
+	    
+	    margin-left: -90px;
+	    margin-top: -90px;
+	    
+	    background-color: white;
+	    background-size: 100%;
+	    
+	   -webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	   
+	    -webkit-transition: all 300ms ease-in;
+	     -moz-transition: all 300ms ease-in;
+	        -ms-transition: all 300ms ease-in;
+	         -o-transition: all 300ms ease-in;
+	            transition: all 300ms ease-in;
+
+	    -webkit-box-reflect: below 0
+	    -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white)); 
+	}
+	&_all{
+		width: 1200px;
+		height: 100%;
 		position: absolute;
-		width: 250px;
-		height: 150px;
+		left: -230px;
 	}
 }
 
@@ -24,3 +56,19 @@
 	width: 0px;
 	background: transparent;
 }
+
+.popup-images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-content{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	background-color: #ffffffbd;
+}
+
