@@ -38,7 +38,7 @@ function template(state,create,iPopup,closeEvent) {
 					<CardNote data={{num:6}} openPopup={iPopup}/>
 					<CardNote data={{num:7}} openPopup={iPopup}/>
 				</div>
-				<ImagesPopup visible={false} objectId={'123sdalmk2331sde231d'} visible={state.impagesPopup} closeEvent={closeEvent}/>
+				<ImagesPopup objectId={'123sdalmk2331sde231d'} visible={state.impagesPopup} closeEvent={closeEvent}/>
 			</div>
 		</div>
     </div>

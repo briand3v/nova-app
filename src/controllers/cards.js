@@ -39,3 +39,14 @@ export const deleteCard = (data) => {
 export const mycards = (data) => {
 	axios.get(baseURL+'/cards/'+data.userid+'/list')
 }
+
+
+export const uploadImage = (image) => {
+	const config = {
+        headers: { 'content-type': 'multipart/form-data' }
+    }
+	console.log('hereeeee', image)
+	return axios.post(baseURL+'/cards/upload',{
+		file: image
+	})
+}
