@@ -44,7 +44,7 @@ const imagesPopup = (props,popupFocusOut,dropImages) => {
 		              {...getRootProps()}
 		              className={'dropzone-base ' + dropzoneStyle.active + dropzoneStyle.reject}
 		            >
-		              <input name="file" {...getInputProps()} />
+		              <input name="image" {...getInputProps()} />
 		              {
 		                isDragActive ?
 		                  <p>Drop files here...</p> :

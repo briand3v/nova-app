@@ -80,16 +80,16 @@ class ImagesPopup extends React.Component {
 	}
 
 	onDropImages(acceptedFiles, rejectedFiles){
+
 		const data = new FormData();
-		data.append('file',acceptedFiles[0])
-		if(data){
-			for (var key of data.entries()) {
-				console.log(key[1])
-				uploadImage(key[1]).then((res) =>{
-					console.log(res)
-				})
-			}
-		}
+		data.append('image',acceptedFiles[0],acceptedFiles[0].name)
+		uploadImage(data)
+		.then((res) => {
+			console.log(res)
+		}).catch((err) => {
+			console.log(err)
+		})
+	
 	}
 
 	render() {

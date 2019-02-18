@@ -45,8 +45,5 @@ export const uploadImage = (image) => {
 	const config = {
         headers: { 'content-type': 'multipart/form-data' }
     }
-	console.log('hereeeee', image)
-	return axios.post(baseURL+'/cards/upload',{
-		file: image
-	})
+	return axios.post(baseURL+'/cards/upload',image)
 }
