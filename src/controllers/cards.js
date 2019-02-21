@@ -41,9 +41,14 @@ export const mycards = (data) => {
 }
 
 
-export const uploadImage = (image) => {
+export const uploadImage = (image, userid) => {
 	const config = {
         headers: { 'content-type': 'multipart/form-data' }
     }
 	return axios.post(baseURL+'/cards/upload',image)
+}
+
+
+export const loadLinks = () =>{
+	return axios.get('/cards/images/loadall')
 }

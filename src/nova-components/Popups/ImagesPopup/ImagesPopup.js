@@ -1,6 +1,6 @@
 import React    from "react";
 import imagesPopup from "./ImagesPopup.jsx";
-import {uploadImage} from '../../../controllers/cards'
+import {uploadImage, loadLinks} from '../../../controllers/cards'
 
 class ImagesPopup extends React.Component {
 
@@ -13,7 +13,8 @@ class ImagesPopup extends React.Component {
 				width: '400px',
 				heigth: '500px'
 			},
-			props: props
+			props: props,
+			images: null
 		}
 		this.images = []
 		this._index = 0
@@ -46,6 +47,7 @@ class ImagesPopup extends React.Component {
 		this.images = Array.prototype.slice.call(document.querySelectorAll('img'))
 		this._index = Math.floor(this.images.length/2)
 		this.renderAnim()
+		// this.loadImages()
 	}
 
 	renderAnim(){
@@ -79,12 +81,49 @@ class ImagesPopup extends React.Component {
 		}
 	}
 
+	loadImages(){
+		// check the defautl image card
+		if(!this.state.images){
+			loadLinks().then((res) => {
+
+				console.log(res)
+
+				return
+				this.setState({
+					images: res
+				})
+			})
+			return
+		}
+
+		return this.state.images
+	}
+
+	appendImage(path){
+		// create new image object
+		const img = new Image()
+		let index = 0
+		if(this.state.images){
+			index = this.state.images.length
+		}
+		img.onload = this.handleImageLoad(index)
+		img.src = path
+	}
+
+	handleImageLoad(i) {
+		const {images} = this.state
+
+		images[i].loaded = true
+		this.setState({images})
+	}
+
 	onDropImages(acceptedFiles, rejectedFiles){
 
-		const data = new FormData();
+		const data = new FormData()
 		data.append('image',acceptedFiles[0],acceptedFiles[0].name)
-		uploadImage(data)
-		.then((res) => {
+		data.append('userid', 'asdadafadjahsdjasdh')
+
+		uploadImage(data).then((res) => {
 			console.log(res)
 		}).catch((err) => {
 			console.log(err)
@@ -93,7 +132,10 @@ class ImagesPopup extends React.Component {
 	}
 
 	render() {
-		return imagesPopup.call(this, this.state, this.popupFocusOut.bind(this),this.onDropImages.bind(this));
+		return imagesPopup.call(this, 
+			this.state, 
+			this.popupFocusOut.bind(this),
+			this.onDropImages.bind(this));
 	}
 }
 
