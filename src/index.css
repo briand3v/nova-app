@@ -35,9 +35,11 @@ code {
 
 a{
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.897);
 }
 a:hover, a:focus{
   text-decoration: none;
+  color: #fff;
 }
 
 
@@ -58,6 +60,10 @@ textarea:focus{
 
 .content-text > p {
   font-size: 25px;
+}
+
+.btn-no-style{
+  
 }
 
 [class*="hidden-"]{
@@ -129,22 +135,22 @@ textarea:focus{
 }
 
 
-.mt-10{
+.m-t-10{
   margin-top: 10px;
 }
-.mt-20{
+.m-t-20{
   margin-top: 20px;
 }
-.mt-30{
+.m-t-30{
   margin-top: 30px;
 }
-.mt-40{
+.m-t-40{
   margin-top: 40px;
 }
-.mt-50{
+.m-t-50{
   margin-top: 50px;
 }
-.mt-100{
+.m-t-100{
   margin-top: 100px;
 }
 
@@ -159,6 +165,12 @@ textarea:focus{
 }
 .w-50p{
   width: 50%;
+}
+.w-60p{
+  width: 60%;
+}
+.w-70p{
+  width: 70%;
 }
 .w-100p{
   width: 100%;
@@ -211,6 +223,9 @@ textarea:focus{
 }
 .p-40{
   padding: 40px!important;
+}
+.m-l-10{
+  margin-left: 10px;
 }
 .mx-0{
   margin-left: 0;
@@ -340,7 +355,9 @@ textarea:focus{
   float: left;
 }
 
-
+.ocult{
+  display: none;
+}
 
 
 

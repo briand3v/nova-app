@@ -112,29 +112,25 @@
 }
 
 [class*='btn-']{
-  width: 100px;
-  height: 40px;
+  height: 22px;
+  width: 65px;
   margin: 0;
   border: .5px solid #fff;
-  border-radius: 40px;
+  border-radius: 9px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   transform: scale(1);
-  transition: .5s all ease-out;
-  font-size: calc(1em - 4px);
+  transition: .2s all ease;
+  font-size: calc(1em - 6px);
   text-transform: uppercase;
   &:hover{
     transform: scale(1.1);
-    transition: .5s all ease-out;
     cursor: pointer;
   }
 }
 
-.btn-default{
-  z-index: 2;
-}
 .btn-success{
   z-index: 2;
 }
@@ -186,6 +182,7 @@ textarea{
   height: 85%;
   color: $softwhite;
   font-size: 14px;
+  font-weight: 600;
   &:hover{
     box-shadow: 0px 1px 0px 0px #8080808f;
   }
@@ -219,5 +216,37 @@ textarea{
   background-color: #eee;
 }
 
+.cardleft{
+  opacity: 0;
+  transition: .6s all ease-in-out;
+  -webkit-transition: .6s all ease-in-out;
+  -moz-transition: .6s all ease-in-out;
+  -o-transition: .6s all ease-in-out;
+  transform: translateX(-70px);
+  -webkit-transform: translateX(-70px);
+  -moz-transform: translateX(-70px);
+  -o-transform: translateX(-70px);
+  z-index: 900;
+}
+
+.fromleft-anim{
+  left: 0;
+  opacity: 1;
+  transition: .6s all ease-in-out;
+  -webkit-transition: .6s all ease-in-out;
+  -moz-transition: .6s all ease-in-out;
+  -o-transition: .6s all ease-in-out;
+  transform: translateX(40px);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+}
 
 
+.ifeather {
+  stroke-width: 1;
+}
+
+.hover-success-ifeather:hover{
+  stroke: rgb(3, 184, 3);
+}

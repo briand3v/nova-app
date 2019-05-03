@@ -15,11 +15,6 @@ class Signup extends React.Component {
 	}
 	
 	componentDidMount(){
-		setTimeout(()=>{
-			const form = document.getElementsByClassName('auth-card')[0]
-			form.classList.toggle('card-anim-1')
-		},300)
-		
 	}
 
 	// method using in both form components
@@ -27,9 +22,9 @@ class Signup extends React.Component {
 		const signupcontainer = document.getElementById('signup-form')
 		const logincontainer = document.getElementById('login-form')
 		const target = e.target
-		const status = target == 'signup' ? true : false
-		signupcontainer.classList.toggle('card-anim-1')
-		logincontainer.classList.toggle('card-anim-1')
+		const status = target === 'signup' ? true : false
+		signupcontainer.classList.toggle('ocult')
+		logincontainer.classList.toggle('ocult')
 		
 		this.setState((state,props)=>({
 			toggle: status

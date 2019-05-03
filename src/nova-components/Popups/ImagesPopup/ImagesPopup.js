@@ -8,12 +8,7 @@ class ImagesPopup extends React.Component {
 		super(props)
 		this.state = {
 			visible: false,
-			direction: 'horizontal',
-			dimensions: {
-				width: '400px',
-				heigth: '500px'
-			},
-			props: props,
+			parent: props,
 			images: null
 		}
 		this.images = []
@@ -25,15 +20,14 @@ class ImagesPopup extends React.Component {
 		this._popupcontent = 'popup-images'
 
 	}
-
+	
+	// update visible when props visible change
 	componentDidUpdate(prevProps,prevState) {
 		// Images popup toggle
 		if(this.props.visible !== prevState.visible){
 				this.setState((state,props)=>({
 				visible: this.props.visible
-			}),()=>{
-				// console.log(this.state)
-			})
+			}),()=>{})
 		}
 	}
 
@@ -43,14 +37,15 @@ class ImagesPopup extends React.Component {
 	}
 
 	init(){
-		// get images and set the index on the images in the middle
+		// get chossed image by index
 		this.images = Array.prototype.slice.call(document.querySelectorAll('img'))
 		this._index = Math.floor(this.images.length/2)
-		this.renderAnim()
-		// this.loadImages()
+
+		// style render images
+		this.renderImages()
 	}
 
-	renderAnim(){
+	renderImages(){
 		for(let i = 0; i<this.images.length; i++){
 
 			const currentimage = document.getElementsByClassName('img'+i)[0]
@@ -74,24 +69,21 @@ class ImagesPopup extends React.Component {
 			}
 		}
 	}
-
+	
 	popupFocusOut(e){
-		if(e.target.id==this._popupcontent){
-			this.state.props.closeEvent()
+		console.log(this.state)
+		if(e.target.id===this._popupcontent){
+			this.state.parent.closeEvent()
 		}
 	}
-
+	
+	// handle images
 	loadImages(){
-		// check the defautl image card
 		if(!this.state.images){
 			loadLinks().then((res) => {
-
-				console.log(res)
-
-				return
-				this.setState({
-					images: res
-				})
+				// this.setState({
+				// 	images: res
+				// })
 			})
 			return
 		}
@@ -121,18 +113,20 @@ class ImagesPopup extends React.Component {
 
 		const data = new FormData()
 		data.append('image',acceptedFiles[0],acceptedFiles[0].name)
-		data.append('userid', 'asdadafadjahsdjasdh')
+		data.append('userId', 'asdadafadjahsdjasdh')
+		data.append('index', 0)
 
 		uploadImage(data).then((res) => {
-			console.log(res)
+			// make a notifications system
 		}).catch((err) => {
-			console.log(err)
+			// make a notifications system
 		})
 	
 	}
 
 	render() {
-		return imagesPopup.call(this, 
+		return imagesPopup.call(
+			this, 
 			this.state, 
 			this.popupFocusOut.bind(this),
 			this.onDropImages.bind(this));

@@ -1,9 +1,10 @@
 import "./notesApp.scss";
 import React from "react";
 import CardNote from './Card/cardnote';
-import ImagesPopup from '../Popups/ImagesPopup/ImagesPopup'
+import ImagesPopup from '../Popups/ImagesPopup/ImagesPopup';
+import { PlusCircle } from 'react-feather';
 
-function template(state,create,iPopup,closeEvent) {
+function template(state,addCard,iPopup,closeEvent,removeCard) {
 	
   return (
     <div className="notes-app">
@@ -17,26 +18,23 @@ function template(state,create,iPopup,closeEvent) {
 					</div>
 					<div className="notespanel">
 						<div className="notespanel_one">
-							<span className="mbrih mbri-plus mt-10 f-right"
-							></span>
+						<PlusCircle className="mbrih f-right ifeather m-t-10" color="white" size={30} onClick={(e)=> {addCard(e)}}/>
 						</div>
 						<div className="notespanel_two">
 							<div className="d-flex content-row buttons">
-								<div className="btn-danger">Delete</div>
-								<div className="btn-copy">Copy</div>
-								<div className="btn-default" onClick={(e)=> {create(e)}}>Note</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className="column column-67 superblock-cards">
-					<CardNote data={{img:'/images/code.png',num:1}} openPopup={iPopup} />
-					<CardNote data={{img:'/images/wallp.png',num:2}} openPopup={iPopup}/>
-					<CardNote data={{num:3}} openPopup={iPopup}/>
-					<CardNote data={{img:'/images/code.png',num:4}} openPopup={iPopup}/>
-					<CardNote data={{num:5}} openPopup={iPopup}/>
-					<CardNote data={{num:6}} openPopup={iPopup}/>
-					<CardNote data={{num:7}} openPopup={iPopup}/>
+					{/* data must be the data of each card in order to print it into the popupImages */}
+					{
+						state.cards.map((card,i) => {
+							return (<CardNote id={card.id} data={card.data} openPopup={iPopup} removeCard={removeCard} new={card.new} key={i} animation={typeof card.animation !== 'undefined' ? card.animation : '' } firtsRender={state.firtsrender}/>)
+						})
+					}
+
 				</div>
 				<ImagesPopup objectId={'123sdalmk2331sde231d'} visible={state.impagesPopup} closeEvent={closeEvent}/>
 			</div>

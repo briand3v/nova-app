@@ -1,8 +1,10 @@
 import "./ImagesPopup.scss";
 import React from "react";
 import Dropzone from 'react-dropzone'
+import PropTypes from 'prop-types';
 
 const imagesPopup = (props,popupFocusOut,dropImages) => {
+	
 	const settings = {
 		ocult: props.visible ? '': 'ocult'
 	}
@@ -11,17 +13,16 @@ const imagesPopup = (props,popupFocusOut,dropImages) => {
 	
 	return (
 		<div id="popup-images" className={'popup-images '+settings.ocult}
-		onClick={(e) => popupFocusOut(e)}
-		>
+		onClick={(e) => popupFocusOut(e)}>
 			<div  className="w-50p images-content">
 			<div>
-				<span className="mbri-close mbrih c-black f-right p-10" onClick={(e)=>{props.props.closeEvent(e)}}></span>				
+				<span className="mbri-close mbrih c-black f-right p-10" onClick={(e)=>{props.parent.closeEvent(e)}}></span>				
 			</div>
 			<div id="scroll-content" className="images">
 				<div className="images_all">
 					{
 						defaultImages.map((img,i)=>{
-							return (<img className={'image img'+i} key={i} src={img.src} style={{left:img.pos}} />)
+							return (<img className={'image img'+i} key={i} src={img.src} style={{left:img.pos}} alt="imag" />)
 						})
 					}
 				</div>
@@ -58,6 +59,12 @@ const imagesPopup = (props,popupFocusOut,dropImages) => {
 			</div>
 		</div>
 	);
+}
+
+imagesPopup.propTypes = {
+	props: PropTypes.object,
+	popupFocusOut: PropTypes.func.isRequired,
+	dropImages: PropTypes.func.isRequired
 }
 
 export default imagesPopup;

@@ -11,9 +11,9 @@ const signup = (switchForm, handlesubmit, state) => {
     		<div className="container form-content">
 				<div className="row d-flex items-h-center relative">
 					<form id="signup-form" className="auth-card">
-
-						<h2>Nuevo usuario</h2>
-
+						<div className="d-flex items-justify-center">
+							<h3>Nuevo usuario</h3>
+						</div>
 						<div className="d-flex content-column">
 							<input 
 							id="name" className="form-control" data-type="name" type="text" placeholder="Nombre de usuario" />
@@ -26,17 +26,19 @@ const signup = (switchForm, handlesubmit, state) => {
 							<input
 							id="password" className="form-control" data-type="password"  type="password" placeholder="Contraseña" />
 						</div>
-						<div className="btns d-flex content-column mt-30">
+						<div className="btns d-flex content-column mt-30 items-align-center">
 							<a
-							onClick={(e)=>{handlesubmit(e)}}
-							className="btn-submit relative">Crear</a>
+								onClick={(e)=>{handlesubmit(e)}}
+								className="btn-submit">Crear
+							</a>
 							<small className="text-center mt-20">Tienes ya una cuenta?</small>
 							<hr className="w-40p"/>
 							<a
-							onClick={(e)=>{switchForm(e)}}
-							className="text-center btn-minimalist-invers"
-							data-form="signup"
-							>Iniciar</a>
+								onClick={(e)=>{switchForm(e)}}
+								className="text-center"
+								data-form="signup"
+							>Iniciar
+							</a>
 						</div>
 					</form> 
 					<Login props={state} switchForm={switchForm}/>
@@ -47,27 +49,27 @@ const signup = (switchForm, handlesubmit, state) => {
   );
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 	
-	const focusoutevent = (e) => {
-		var value = e.target.value
-		var target = e.target
-		if(value==''){
-			target.style.borderColor = "white";
-		} else {
-			target.style.borderColor = "#dadadab5";
-		}
-	}
+// 	const focusoutevent = (e) => {
+// 		var value = e.target.value
+// 		var target = e.target
+// 		if(value==''){
+// 			target.style.borderColor = "white";
+// 		} else {
+// 			target.style.borderColor = "#dadadab5";
+// 		}
+// 	}
 
-    const handleeventsfields = () => {
-		var inputs = document.getElementsByClassName('form-control')
-		for(let i = 0; i < inputs.length; i++){
-			inputs[i].addEventListener('focusout', focusoutevent)
-		}
-	}
+//     const handleeventsfields = () => {
+// 		var inputs = document.getElementsByClassName('form-control')
+// 		for(let i = 0; i < inputs.length; i++){
+// 			inputs[i].addEventListener('focusout', focusoutevent)
+// 		}
+// 	}
 
-	handleeventsfields()
-});
+// 	// handleeventsfields()
+// });
 
 
 const template = {

@@ -4,9 +4,11 @@ import React from "react";
 
 function template(signinProps, submit) {
   return (
-    <form id="login-form" className="auth-card">
+    <form id="login-form" className="auth-card ocult">
 
-		<h2>Iniciar sessión</h2>
+		<div className="d-flex items-justify-center">
+			<h3>Iniciar sessión</h3>
+		</div>
 
 		<div className="d-flex content-column">
 			<input 
@@ -23,17 +25,18 @@ function template(signinProps, submit) {
 
 			id="password2" className="form-control"  type="password" placeholder="Contraseña" />
 		</div>
-		<div className="btns d-flex content-column mt-30">
+		<div className="btns d-flex content-column mt-30 items-align-center">
 			<a 
 			className="btn-submit relative" 
-			onClick={(e) => {submit(e)}}>Iniciar</a>
+			onClick={(e) => {submit(e)}}>Iniciar
+			</a>
 			<small className="text-center mt-20">No tienes cuenta?</small>
 			<hr className="w-40p"/>
 			<a
 			onClick={(e) => signinProps.switchForm(e)}
-			className="text-center btn-minimalist-invers"
-			data-form="login"
-			>Crear</a>
+			className="text-center"
+			data-form="login">Crear
+			</a>
 		</div>
 	</form> 
   );
