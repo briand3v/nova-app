@@ -4,7 +4,7 @@ import CardNote from './Card/cardnote';
 import ImagesPopup from '../Popups/ImagesPopup/ImagesPopup';
 import { PlusCircle } from 'react-feather';
 
-function template(state,addCard,iPopup,closeEvent,removeCard) {
+function template(state,addCard,iPopup,closeEvent,removeCard,focusOut,handleChangeText) {
 	
   return (
     <div className="notes-app">
@@ -31,7 +31,21 @@ function template(state,addCard,iPopup,closeEvent,removeCard) {
 					{/* data must be the data of each card in order to print it into the popupImages */}
 					{
 						state.cards.map((card,i) => {
-							return (<CardNote id={card.id} data={card.data} openPopup={iPopup} removeCard={removeCard} new={card.new} key={i} animation={typeof card.animation !== 'undefined' ? card.animation : '' } firtsRender={state.firtsrender}/>)
+							return (<CardNote 
+								id={card.id} 
+								data={card.data} 
+								openPopup={iPopup} 
+								removeCard={removeCard}
+								newcards={state.newcards}
+								group={state.group}
+								new={card.new} 
+								key={i} 
+								animation={typeof card.animation !== 'undefined' ? card.animation : '' } 
+								groupnewcards={state.groupnewcards}
+								focusOut={focusOut}
+								handleChangeText={handleChangeText}
+								text={card.text}
+								/>)
 						})
 					}
 

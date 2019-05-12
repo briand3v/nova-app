@@ -9,7 +9,7 @@ const imagesPopup = (props,popupFocusOut,dropImages) => {
 		ocult: props.visible ? '': 'ocult'
 	}
 
-	const defaultImages = [{src: '/images/code.png', pos: '140px' },{src: '/images/one-way.png', pos: '320px' },{src: '/images/wallp.png', pos: '500px' },{src: '/images/wallp.png', pos: '680px' },{src: '/images/wallp.png', pos: '860px' }]
+	const defaultImages = [{src: '/images/code.png', pos: '140px' },{src: '/images/deadmau5.png', pos: '320px' },{src: '/images/wallp.png', pos: '500px' },{src: '/images/wallp.png', pos: '680px' },{src: '/images/wallp.png', pos: '860px' }]
 	
 	return (
 		<div id="popup-images" className={'popup-images '+settings.ocult}
