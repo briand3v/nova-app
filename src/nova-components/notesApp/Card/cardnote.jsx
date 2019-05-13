@@ -12,18 +12,16 @@ const CardNote = props => {
 		backgroundSize: 'cover',
 		borderRadius: '6px'
 	}
+	const ocultremovecard = !props.processremove ? 'ocult' : '';
 
 	return (
-
-
-
 	<div id={props.id} className="row m-l-0 supernova-card">
 
-		<div className="column column-10 card_delete ocult m-b-0 p-0 d-flex content-column items-justify-around">
-			<div className="w-100p h-50p d-flex items-align-center items-justify-center card-red">
+		<div className={"column column-10 card_delete m-b-0 p-0 d-flex content-column items-justify-around "+ocultremovecard}>
+			<div className="w-100p h-50p d-flex items-align-center items-justify-center card-red" onClick={(e) => {props.handleRemove(e)}}>
 				<p className="m-b-0 text-center">Delete</p>
 			</div>
-			<div className="w-100p h-50p d-flex items-align-center items-justify-center">
+			<div className="w-100p h-50p d-flex items-align-center items-justify-center" onClick={(e) => {props.cancel(e)}}>
 				<p className="m-b-0 text-center">Cancel</p>
 			</div>
 		</div>
@@ -32,7 +30,7 @@ const CardNote = props => {
 			<div className="container card-container">
 				<div className="row content-column">
 					<div className="column column-100 h-5p">
-						<input id="titlecard" className="inputtext cardtitle" placeholder="Title"/>
+						<input id="titlecard" className="inputtext cardtitle" placeholder="Title" onChange={(e) => {props.handleChangeText(e,'title')}} value={props.title}/>
 					</div>
 					
 					<div className="column column-100 h-50p">
@@ -43,7 +41,7 @@ const CardNote = props => {
 								}
 								<Trash className="mbrih ifeather m-l-10" color="white" size={20} onClick={(e) => {props.removeCard(e)}} />
 								<Mic className="mbrih f-right ifeather" color="white" size={20} />
-								<Image className="mbrih f-right ifeather" color="white" size={20} onClick={(e)=>{ props.openPopup(e) }} />
+								<Image className="mbrih f-right ifeather" color="white" size={20} onClick={(e)=>{ props.openImagesPopup(e) }} />
 								</div>
 							<div className="column column-50">
 								<textarea onBlur={(e) => {props.focusOut(e)}} onChange={(e) => {props.handleChangeText(e)}} className="cardtext" placeholder="Card description" value={props.text}></textarea>
@@ -55,7 +53,6 @@ const CardNote = props => {
 			</div>
 		</div>
 	</div>
-
 	);
 };
 

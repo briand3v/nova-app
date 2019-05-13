@@ -73,7 +73,7 @@ class ImagesPopup extends React.Component {
 	popupFocusOut(e){
 		console.log(this.state)
 		if(e.target.id===this._popupcontent){
-			this.state.parent.closeEvent()
+			this.state.parent.closePopup()
 		}
 	}
 	

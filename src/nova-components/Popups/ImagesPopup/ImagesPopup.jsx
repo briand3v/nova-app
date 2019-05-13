@@ -16,7 +16,7 @@ const imagesPopup = (props,popupFocusOut,dropImages) => {
 		onClick={(e) => popupFocusOut(e)}>
 			<div  className="w-50p images-content">
 			<div>
-				<span className="mbri-close mbrih c-black f-right p-10" onClick={(e)=>{props.parent.closeEvent(e)}}></span>				
+				<span className="mbri-close mbrih c-black f-right p-10" onClick={(e)=>{props.parent.closePopup(e)}}></span>				
 			</div>
 			<div id="scroll-content" className="images">
 				<div className="images_all">
