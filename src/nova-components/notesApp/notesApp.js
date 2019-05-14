@@ -106,7 +106,8 @@ class notesApp extends React.Component {
 
 	focusOut(e){
 		e.preventDefault();
-
+		const cardtarget = e.target.closest('.anim_shadow');
+		cardtarget.querySelector('.box-anim').classList.add('box')
 		// save text input in case of make other action like delete other card to keep the changes
 		let currentCards = this.state.cards
 		const text = e.target.value;
